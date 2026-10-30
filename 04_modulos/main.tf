@@ -9,3 +9,9 @@ module "vpc" {
   vpc_cidr   = var.vpc_cidr
   aws_region = var.aws_region
 }
+
+module "ecr" {
+  source       = "./modules/ecr"
+  prefix       = var.prefix
+  repositorios = ["frontend", "backend", "auth-service"]
+} 
